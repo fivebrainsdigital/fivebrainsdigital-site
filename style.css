@@ -1,0 +1,116 @@
+
+/* ---------------------------------------------------------------
+   Five Brains Digital — house palette is BLUE / WHITE / BLACK.
+   Each section carries its own colour, set by a class on <body>:
+     .elc  Elder Care ......... green + khaki
+     .scm  The Scam Sheet ..... red, white and blue
+     .csy  Work & Focus ....... black + red
+   --------------------------------------------------------------- */
+:root{
+  --ground:#FFFFFF; --panel:#F5F8FC; --panel-2:#E8F0F9;
+  --ink:#11151A; --ink-2:#3D4855; --ink-3:#6B7684;
+  --rule:#D6E1EE; --rule-2:#B9C9DC;
+  --accent:#12457F; --accent-2:#1A5FA8; --accent-ink:#FFFFFF;
+  --mark:#12457F;
+}
+body.elc{
+  --ground:#F3F3F2; --panel:#FFFFFF; --panel-2:#E5E5E3;
+  --ink:#17181A; --ink-2:#454749; --ink-3:#71747A;
+  --rule:#D4D5D4; --rule-2:#B6B8B7;
+  --accent:#B0500C; --accent-2:#C9611A; --accent-ink:#FFFFFF;
+  --mark:#B0500C;
+}
+body.scm{
+  --ground:#FFFFFF; --panel:#F4F6FB; --panel-2:#E7ECF7;
+  --ink:#101623; --ink-2:#39435A; --ink-3:#6A7387;
+  --rule:#D5DCEB; --rule-2:#B6C1D8;
+  --accent:#17356B; --accent-2:#22488C; --accent-ink:#FFFFFF;
+  --mark:#B3202E;
+}
+body.csy{
+  --ground:#101011; --panel:#191A1C; --panel-2:#232427;
+  --ink:#F2F0EE; --ink-2:#BDBBB8; --ink-3:#8A8886;
+  --rule:#2E2F32; --rule-2:#414347;
+  --accent:#C0272D; --accent-2:#DB3B41; --accent-ink:#FFFFFF;
+  --mark:#DB3B41;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1117; --panel:#151C25; --panel-2:#1D2733;
+    --ink:#EEF2F7; --ink-2:#B4BFCC; --ink-3:#828E9C;
+    --rule:#28323F; --rule-2:#3A4757;
+    --accent:#79B0EC; --accent-2:#9AC6F5; --accent-ink:#0D1117;
+    --mark:#79B0EC;
+  }
+  :root:not([data-theme="light"]) body.elc{
+    --ground:#141414; --panel:#1D1E1E; --panel-2:#272829;
+    --ink:#EFEFEE; --ink-2:#B9BBBC; --ink-3:#8A8D8F;
+    --rule:#2F3031; --rule-2:#434546;
+    --accent:#E8934F; --accent-2:#F2A868; --accent-ink:#141414;
+    --mark:#E8934F;
+  }
+  :root:not([data-theme="light"]) body.scm{
+    --ground:#0C1018; --panel:#141A26; --panel-2:#1C2434;
+    --ink:#EDF1F8; --ink-2:#B2BCCC; --ink-3:#7F8A9B;
+    --rule:#252F3F; --rule-2:#374356;
+    --accent:#8FB4EA; --accent-2:#A9C7F3; --accent-ink:#0C1018;
+    --mark:#F08A8A;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:19px; line-height:1.65;
+}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;position:fixed;background:var(--accent);color:var(--accent-ink);
+  padding:10px 16px;border-radius:6px;z-index:99}
+.wrap{max-width:44rem;margin:0 auto;padding:0 20px}
+header.site{border-bottom:4px solid var(--mark);background:var(--panel)}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:baseline;
+  padding-top:20px;padding-bottom:18px}
+.brand{font-weight:700;font-size:20px;color:var(--accent);text-decoration:none}
+nav a{color:var(--ink-2);text-decoration:none;font-size:16px;margin-right:20px;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+nav a:hover,nav a:focus{color:var(--accent);text-decoration:underline}
+main{padding:44px 0 72px}
+h1{font-size:clamp(30px,5.2vw,42px);line-height:1.15;margin:0 0 18px;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(23px,3.4vw,28px);line-height:1.25;margin:44px 0 12px;text-wrap:balance}
+h3{font-size:20px;margin:30px 0 8px;line-height:1.35}
+p{margin:0 0 18px}
+.lede{font-size:clamp(20px,2.6vw,23px);line-height:1.55;color:var(--ink-2)}
+a{color:var(--accent-2)}
+hr.gold{border:0;height:4px;background:var(--mark);width:80px;margin:26px 0;border-radius:2px}
+.eyebrow{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--mark);font-weight:700;margin:0 0 10px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:22px 24px;margin:0 0 16px}
+.card h3{margin-top:0}
+.card p:last-child{margin-bottom:0}
+.meta{font-family:system-ui,sans-serif;font-size:15px;color:var(--ink-3);margin:0 0 10px}
+.price{font-family:system-ui,sans-serif;font-weight:700;color:var(--accent);font-size:16px}
+.free{background:var(--panel-2);border-color:var(--rule-2)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+  font-family:system-ui,sans-serif;font-size:17px;font-weight:600;padding:12px 22px;
+  border-radius:8px;margin-top:6px}
+.btn:hover,.btn:focus{background:var(--accent-2)}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:10px 20px}
+ul,ol{margin:0 0 18px;padding-left:1.3em}
+li{margin-bottom:9px}
+blockquote{margin:0 0 20px;padding:16px 20px;background:var(--panel-2);
+  border-left:5px solid var(--mark);border-radius:0 8px 8px 0}
+blockquote p:last-child{margin-bottom:0}
+.note{background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin:0 0 20px;font-size:17px}
+.disclaimer{font-size:15.5px;color:var(--ink-2);background:var(--panel);border:1px solid var(--rule);
+  border-radius:10px;padding:18px 20px;margin:34px 0 0;font-family:system-ui,sans-serif;line-height:1.55}
+footer.site{border-top:4px solid var(--mark);background:var(--panel);padding:30px 0 44px;
+  font-family:system-ui,sans-serif;font-size:15.5px;color:var(--ink-3);line-height:1.6}
+footer.site a{color:var(--ink-2)}
+.toc{font-family:system-ui,sans-serif;font-size:16.5px}
+.toc a{text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.shelf{display:grid;gap:14px}
+*:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:4px}
+@media (max-width:560px){ body{font-size:18px} .wrap{padding:0 16px} }
